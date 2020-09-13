@@ -4,7 +4,7 @@
   "description": "A toolkit for development of browser extension",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf ./lib && tsc -p tsconfig.lib.json && cp src/*.sh package.json README.md LICENSE ./lib"
   },
   "dependencies": {
     "archiver": "^5.0.2",

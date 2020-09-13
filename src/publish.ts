@@ -7,7 +7,7 @@ import { createWriteStream, ensureDirSync } from 'fs-extra';
 
 const branch = 'archives';
 
-const ORPHAN_BRANCH_SETUP_SH = path.resolve(__dirname, '../scripts/orphan-branch-setup.sh');
+const ORPHAN_BRANCH_SETUP_SH = path.resolve(__dirname, './orphan-branch-setup.sh');
 const setUpOrphanBranch = () => {
   return new Promise((resolve, reject) => {
     const cp = exec(`sh ${ORPHAN_BRANCH_SETUP_SH} `);
