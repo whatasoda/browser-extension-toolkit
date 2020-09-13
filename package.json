@@ -1,0 +1,45 @@
+{
+  "name": "@whatasoada/browser-extension-toolkit",
+  "version": "1.0.0",
+  "description": "A toolkit for development of browser extension",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "archiver": "^5.0.2",
+    "fs-extra": "^9.0.1",
+    "gh-pages": "^3.1.0"
+  },
+  "peerDependencies": {
+    "@types/chrome": ">=0.0.123",
+    "terser-webpack-plugin": ">=4.2.0",
+    "webpack": ">=4.44.1"
+  },
+  "devDependencies": {
+    "@types/archiver": "^3.1.0",
+    "@types/chrome": "0.0.123",
+    "@types/fs-extra": "^9.0.1",
+    "@types/gh-pages": "^3.0.0",
+    "@types/node": "^14.10.1",
+    "@types/terser-webpack-plugin": "^4.1.0",
+    "@types/webpack": "^4.41.22",
+    "@whatasoda/eslint-config": "^3.10.0",
+    "@whatasoda/tsconfig": "^1.0.3",
+    "prettier": "^2.1.1",
+    "terser-webpack-plugin": "^4.2.0",
+    "typescript": "^4.0.2",
+    "webpack": "^4.44.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whatasoda/browser-extension-toolkit.git"
+  },
+  "keywords": [],
+  "author": "whatasoda <git@whatasoda.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/whatasoda/browser-extension-toolkit/issues"
+  },
+  "homepage": "https://github.com/whatasoda/browser-extension-toolkit#readme"
+}
