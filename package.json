@@ -1,6 +1,6 @@
 {
   "name": "@whatasoada/browser-extension-toolkit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A toolkit for development of browser extension",
   "main": "index.js",
   "scripts": {
