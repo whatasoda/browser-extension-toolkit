@@ -8,7 +8,7 @@ import { createWriteStream, ensureDirSync } from 'fs-extra';
 const branch = 'archives';
 
 const ORPHAN_BRANCH_SETUP_SH = path.resolve(__dirname, './orphan-branch-setup.sh');
-const setUpOrphanBranch = () => {
+export const setUpOrphanBranch = () => {
   return new Promise((resolve, reject) => {
     const cp = exec(`sh ${ORPHAN_BRANCH_SETUP_SH} `);
     cp.stderr?.pipe(process.stderr);
@@ -24,7 +24,7 @@ const setUpOrphanBranch = () => {
   });
 };
 
-const archive = (name: string, version: string, buildDir: string, zipDir: string) => {
+export const archive = (name: string, version: string, buildDir: string, zipDir: string) => {
   ensureDirSync(zipDir);
   const filename = `${name}-v${version}.zip`;
 
@@ -46,7 +46,7 @@ const archive = (name: string, version: string, buildDir: string, zipDir: string
   });
 };
 
-const upload = (zipDir: string) => {
+export const upload = (zipDir: string) => {
   return new Promise((resolve, reject) => {
     uploader(zipDir, { branch, add: true }, (err) => {
       if (err) {
@@ -59,7 +59,7 @@ const upload = (zipDir: string) => {
   });
 };
 
-export const publish = async (name: string, version: string, buildDir: string, zipDir: string) => {
+const publish = async (name: string, version: string, buildDir: string, zipDir: string) => {
   try {
     await setUpOrphanBranch();
     await archive(name, version, buildDir, zipDir);
@@ -69,3 +69,5 @@ export const publish = async (name: string, version: string, buildDir: string, z
     process.exit(1);
   }
 };
+
+export default publish;
