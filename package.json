@@ -1,11 +1,11 @@
 {
-  "name": "@whatasoada/browser-extension-toolkit",
+  "name": "@whatasoda/browser-extension-toolkit",
   "version": "1.0.1",
   "description": "A toolkit for development of browser extension",
   "main": "index.js",
   "scripts": {
     "build": "rm -rf ./lib && tsc -p tsconfig.lib.json && cp src/*.sh package.json README.md LICENSE ./lib",
-    "postversion": "git push && git push --tags && npm publish ./lib"
+    "postversion": "npm run build && git push && git push --tags && npm publish ./lib"
   },
   "dependencies": {
     "archiver": "^5.0.2",
