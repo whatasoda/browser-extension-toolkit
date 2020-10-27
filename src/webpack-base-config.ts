@@ -22,7 +22,7 @@ const WebpackBaseConfig = (mode: webpack.Configuration['mode'], paths: Record<'e
   const devtool: webpack.Options.Devtool = mode !== 'production' ? 'source-map' : 'nosources-source-map';
   const entry: webpack.Entry = getEntries(paths.entrypoints);
   const output: webpack.Output = {
-    path: path.resolve(__dirname, '../../dist'),
+    path: paths.dist,
     filename: '[name].js',
   };
 
