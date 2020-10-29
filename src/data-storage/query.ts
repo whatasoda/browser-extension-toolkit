@@ -31,9 +31,7 @@ export const compareQuerySingle = <T>(entity: Entity<T>, { key, filter }: Query)
       return value === filter;
     default: {
       if (filter instanceof RegExp) {
-        if (typeof value === 'string') {
-          return filter.test(value);
-        }
+        return filter.test(value);
       } else if (Array.isArray(filter)) {
         if (typeof value === 'number') {
           return filter[0] <= value && filter[1] >= value;
