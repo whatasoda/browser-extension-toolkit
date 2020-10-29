@@ -3,9 +3,11 @@ import { Entity, Query, QueryOR } from './decls';
 const META_KEYS: (keyof Entity<any>)[] = ['index', 'createdAt', 'updatedAt'];
 
 export const compareQueryMany = <T>(entities: (Entity<T> | undefined)[], queriesOR: QueryOR) => {
+  if (queriesOR.length === 0) {
+    return entities.filter<Entity<T>>(Boolean as any);
+  }
   return entities.filter<Entity<T>>((entity): entity is Entity<T> => {
     if (!entity) return false;
-    if (queriesOR.length === 0) return true;
     return queriesOR.some((queriesAND) => {
       return queriesAND.every((query) => {
         try {
